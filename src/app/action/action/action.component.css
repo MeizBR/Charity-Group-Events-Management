@@ -1,0 +1,97 @@
+.action-image {
+    width: 100%;
+    max-height: 60%;
+    margin: auto;
+}
+
+#actions-page-title {
+    text-align: center;
+    margin: 15px;
+}
+
+.actions-list {
+    margin: 30px;
+    padding: 15px;
+    border: 2px solid blue;
+    border-radius: 10px;
+    box-shadow: 0 0 2px 2px blue;
+    text-align: center;
+}
+
+#actions-page-title, .action-title, button {
+    font-family: "Lobster";
+}
+
+.action-item {
+    border: 2px solid steelblue;
+}
+
+.actions-list-title {
+    font-family: "Lobster";
+    text-align: center;
+    color: blue;
+    animation: lightning 1s infinite;
+}
+  
+@keyframes lightning {
+    0% {
+      text-shadow: 0 0 10px darkblue, 0 0 20px darkblue, 0 0 30px darkblue;
+    }
+    100% {
+      text-shadow: 0 0 10px steelblue, 0 0 25px steelblue, 0 0 35px steelblue;
+    }
+}
+
+form {
+    margin: 10px auto;
+    width: 50%;
+}
+
+.form-item {
+    font-family: "Lobster";
+}
+
+.form-item div {
+    width: 100%;
+}
+
+.done {
+    width: 12%;
+    height: 8%;
+    margin-right: 25px;
+    margin-left: 10px;
+    padding: 5px;
+    border: 2px solid green;
+    cursor: pointer;
+}
+
+.done:hover {
+    background-color: green;
+    border: 2px solid steelblue;
+}
+
+.undone {
+    width: 12%;
+    height: 8%;
+    padding: 5px;
+    border: 2px solid red;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.undone:hover {
+    background-color: red;
+    border: 2px solid steelblue;
+}
+
+.search-form {
+    border: 2px solid steelblue;
+    border-radius: 10px;
+    padding: 10px;
+    font-family: "Lobster";
+    margin: auto;
+}
+
+form #search {
+    margin: auto;
+}

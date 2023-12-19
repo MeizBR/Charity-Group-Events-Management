@@ -1,0 +1,8 @@
+#logo {
+    width: 50px;
+    margin-right: 20px;
+}
+
+.brand-text, .nav-item, button, input {
+    font-family: "Lobster";
+}

@@ -1,0 +1,20 @@
+form {
+    border: 2px solid blue;
+    border-radius: 10px;
+    box-shadow: 0 0 2px 2px blue;
+    margin: 20px auto;
+    width: 80%;
+    padding: 20px;
+}
+
+label, legend, input, textarea, button {
+    font-family: "Lobster";
+}
+
+.alert-message {
+    margin: 20px auto;
+    width: 50%;
+    font-family: "Lobster";
+    text-align: center;
+    display: none;
+}

@@ -1,0 +1,36 @@
+<h1 id="members-page-title" class="text-primary">Members Page</h1>
+
+<div class="members-list">
+    <h5 class="member-title text-info">Add a member to our family</h5>
+    <form class="form">
+        <div class="input-group mb-2 mr-sm-2 form-item">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><h5>Member Identifier</h5></div>
+            </div>
+            <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Id" [(ngModel)]="memberId" name="memberId">
+          </div>
+
+        <div class="input-group mb-2 mr-sm-2 form-item">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><h5>Member Name</h5></div>
+          </div>
+          <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Name" [(ngModel)]="memberName" name="memberName">
+        </div>
+      
+        <button type="button" class="btn btn-primary mb-2" (click)="addMember()"><h5>Add member</h5></button>
+      </form>
+</div>
+
+<h3 class="members-list-title">Our family contains members list</h3>
+<div class="card-deck members-list row">
+    <div *ngFor="let member of members" class="card col member-item">
+        <img class="card-img-top member-image" [src]="member.photo" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title member-title text-primary">Member name:</h5>
+          <h5 class="card-title member-title">{{ member.name }}</h5>
+          <button type="button" class="btn btn-primary" (click)="deleteMember(member.id)">Delete member</button>
+        </div>
+      </div>      
+</div>
+
+

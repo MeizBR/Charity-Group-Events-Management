@@ -1,0 +1,78 @@
+<h1 id="actions-page-title" class="text-primary">Actions Page</h1>
+
+<div class="actions-list">
+    <h5 class="action-title text-info">Add an action to our plans</h5>
+    <form class="form">
+        <div class="input-group mb-2 mr-sm-2 form-item">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><h5>Action Name</h5></div>
+            </div>
+            <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Action Name" [(ngModel)]="newAction.name" name="actionName">
+        </div>
+
+        <div class="input-group mb-2 mr-sm-2 form-item">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><h5>Action Objective</h5></div>
+            </div>
+            <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Action Objective" [(ngModel)]="newAction.objective" name="actionObjective">
+        </div>
+
+        <div class="input-group mb-2 mr-sm-2 form-item">
+          <div class="input-group-prepend">
+            <div class="input-group-text"><h5>Action Responsible</h5></div>
+          </div>
+          <input type="text" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Action Responsible" [(ngModel)]="newAction.responsible" name="actionResponsible">
+        </div>
+
+        <div class="input-group mb-2 mr-sm-2 form-item">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><h5>Action Beneficiaries</h5></div>
+            </div>
+            <input type="number" class="form-control" id="inlineFormInputGroupUsername2" placeholder="Action Beneficiaries" [(ngModel)]="newAction.beneficiaries" name="actionBeneficiaries">
+        </div>
+
+        <div class="input-group mb-2 mr-sm-2 form-item">
+            <div class="input-group-prepend">
+              <div class="input-group-text"><h5>Action Creation Date</h5></div>
+            </div>
+            <input type="date" class="form-control" id="inlineFormInputGroupUsername2" [(ngModel)]="newAction.creationDate" name="actionCreationDate">
+        </div>
+      
+        <button type="button" (click)="addAction()" class="btn btn-primary mb-2"><h5>Add an action</h5></button>
+      </form>
+</div>
+
+<h3 class="actions-list-title mb-5">Our actions list is bellow</h3>
+
+<form class="form-inline my-2 my-lg-0 search-form">
+    <div id="search">
+        <input class="form-control mr-sm-2" id="search-input" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="newAction.name" name="actionName">
+        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" (click) ="filter(newAction.name)">Search</button>
+    </div>
+</form>
+
+<div class="card-deck actions-list row">
+    <div *ngFor="let action of actions" class="card col action-item" [style.background]="getBackgroundColor(action)">
+        <img class="card-img-top action-image" src="../../../assets/charity-action.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title action-title text-primary">Action Name:</h5>
+            <h5 class="card-title action-title">{{ action.name }}</h5>
+            <h5 class="card-title action-title text-primary">Action Objective:</h5>
+            <h5 class="card-title action-title">{{ action.objective }}</h5>
+            <h5 class="card-title action-title text-primary">Action Responsible:</h5>
+            <h5 class="card-title action-title">{{ action.responsible }}</h5>
+            <h5 class="card-title action-title text-primary">Action Beneficiaries:</h5>
+            <h5 class="card-title action-title">{{ action.beneficiaries }}</h5>
+            <h5 class="card-title action-title text-primary">Action Creation Date:</h5>
+            <h5 class="card-title action-title">{{ action.creationDate }}</h5>
+            <button type="button" class="btn btn-primary" (click)="deleteAction(action.name)">Delete action</button>
+            <br><br>
+            <span id="su" style="font-family: 'Lobster';">Succeeded</span>
+            <img class="done" src="../../../assets/done.svg" (click)="markSuccess(action)" />
+            <img class="undone" src="../../../assets/undone.svg" (click)="markFail(action)" />
+            <span id="fa" style="font-family: 'Lobster';">Failed</span>
+        </div>
+    </div>      
+</div>
+
+
